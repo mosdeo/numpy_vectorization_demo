@@ -2,7 +2,7 @@ import numpy as np
 import time
 # Python 版本: 3.11
 # NumPy 版本: 1.24.1
-# 日期: 2023-3-5
+# 日期: 2024-12-25
 # 作者: Lin Kao-Yuan 林高遠
 # 知乎: www.zhihu.com/people/lin-kao-yuan
 # 網站: web.ntnu.edu.tw/~60132057A
@@ -16,7 +16,7 @@ rects = np.random.randint(0, 100, (17800000, 2, 2))
 start_time = time.time()
 area = []
 for rect in rects:
-    area.append((abs(rect[0][0] - rect[0][1]) * abs(rect[1][0] - rect[1][1])))
+    area.append(abs((rect[0][0] - rect[0][1]) * (rect[1][0] - rect[1][1])))
 elapsed_time_for_loop = time.time() - start_time
 print("檢驗結果: %s" % (sum(area)))
 print("Elapsed time: %s" % (elapsed_time_for_loop))
